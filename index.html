@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il Metodo SUPER-ALE · Come allenarsi davvero</title>
+<meta name="description" content="Il sistema con cui costruiamo il percorso di ogni cliente SUPER-ALE: progressione, ripetizioni in riserva, blocchi, scarico e alimentazione.">
+<meta property="og:title" content="Il Metodo SUPER-ALE · Come allenarsi davvero">
+<meta property="og:description" content="Le 10 cose che impara ogni cliente SUPER-ALE.">
+<meta property="og:image" content="img/ale.jpg">
+<link rel="icon" href="img/icona_bs.png">
+<style>
+@font-face{font-family:"Montserrat";font-weight:900;src:url(font/Montserrat-900-normal.ttf) format("truetype");font-display:swap}
+@font-face{font-family:"Newsreader";font-weight:400;src:url(font/Newsreader-400-normal.ttf) format("truetype");font-display:swap}
+@font-face{font-family:"Newsreader";font-weight:600;src:url(font/Newsreader-600-normal.ttf) format("truetype");font-display:swap}
+:root{--bg:#050A18;--panel:#0B1430;--panel2:#101C40;--line:rgba(255,255,255,.12);--text:#FFFFFF;--soft:#C9D2E6;--muted:#8793B0;--accent:#9FB6EA;--rouge:#9E1B2B;--ink:#00225A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section,main{scroll-margin-top:16px}
+body{background:var(--bg);color:var(--text);font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.h{font-family:"Montserrat",Arial,sans-serif;font-weight:900;letter-spacing:-.02em;line-height:1.02;text-transform:lowercase}
+.kick{font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.hl{color:var(--accent)}
+b{font-weight:600;color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--rouge);color:#fff;text-decoration:none;font-family:"Montserrat",Arial,sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;padding:16px 26px;border-radius:999px;text-transform:uppercase;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px);background:#b8283a}
+.btn.white{background:#fff;color:var(--ink)}
+.link{font-family:"Montserrat";font-weight:900;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+
+/* barra fissa in basso */
+.barra-call{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:center;gap:18px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(5,10,24,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.barra-call span{font-weight:600;font-size:17px}
+.barra-call .btn{padding:12px 22px;font-size:13px;white-space:nowrap}
+body{padding-bottom:84px}
+@media (max-width:560px){.barra-call{gap:10px;justify-content:space-between}.barra-call span{font-size:14.5px;line-height:1.25}.barra-call .btn{padding:11px 14px;font-size:11px}body{padding-bottom:96px}}
+/* striscia fissa in alto */
+.strip{position:sticky;top:0;z-index:10;display:block;text-align:center;background:var(--rouge);color:#fff;text-decoration:none;font-family:"Montserrat",Arial,sans-serif;font-weight:900;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 16px}
+.strip span{display:inline-block;transition:transform .15s}
+.strip:hover span{transform:translateX(4px)}
+@media (max-width:560px){.strip{font-size:12px;padding:12px}}
+/* barra */
+.bar{position:sticky;top:0;z-index:10;background:rgba(5,10,24,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+.bar img{height:34px;display:block}
+.bar .btn{padding:11px 18px;font-size:12px}
+
+/* hero */
+.hero{padding:80px 0 0;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(44,66,168,.35),transparent 70%)}
+.hero .logo{height:90px;margin:0 auto 44px;display:block}
+.hero h1{font-size:clamp(46px,8vw,96px);margin:18px auto 24px;max-width:13ch}
+.hero p.lead{font-size:21px;max-width:40ch;margin:0 auto;color:var(--soft)}
+.hero .cta{margin-top:34px;display:flex;justify-content:center;align-items:center;gap:26px;flex-wrap:wrap}
+.firma{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:40px}
+.firma img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:2px solid var(--line)}
+.firma div{text-align:left;font-size:15px;color:var(--soft);line-height:1.35}
+.firma b{display:block;font-size:16px}
+.hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;text-align:left}
+.hero .hgrid h1{margin:18px 0 34px;line-height:1.08;font-size:clamp(40px,5.6vw,74px);max-width:none}
+.hero .hgrid p.lead{margin:0}
+.hgrid .cta,.hgrid .firma{justify-content:flex-start}
+.hfoto{border-radius:26px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hfoto img{width:100%;height:100%;object-fit:cover;display:block}
+/* recensioni */
+.recensioni{columns:3;column-gap:18px;margin-top:36px}
+.rec{break-inside:avoid;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px;margin-bottom:18px}
+.rec .stelle{color:#F2C14E;letter-spacing:3px;font-size:15px;margin-bottom:12px}
+.rec p{font-size:17px;color:#fff;line-height:1.5}
+.rec .chi{margin-top:14px;font-size:14px;color:var(--muted)}
+.rec .chi b{color:var(--soft);font-weight:600}
+@media (max-width:960px){.recensioni{columns:2}}
+@media (max-width:760px){.hgrid{grid-template-columns:1fr;gap:36px}.hfoto{max-width:440px}}
+@media (max-width:560px){.recensioni{columns:1}}
+
+/* nastro prodotti */
+.giostra{overflow:hidden;margin-top:64px;padding:8px 0 80px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.giostra .nastro{gap:18px}
+.giostra .p{width:170px;height:170px;flex:none;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center}
+.giostra .p img{width:80%;height:80%;object-fit:contain}
+
+section{padding:80px 0}
+h2.h{font-size:clamp(34px,4.8vw,54px);margin:14px 0 18px}
+.sub{font-size:19px;max-width:58ch;color:var(--soft)}
+
+/* leggi prima */
+.prima{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.prima h2{margin:12px 0 0}
+.prima p{font-size:19px;color:var(--soft)}
+/* come usare */
+.passi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.passo{border-top:2px solid var(--accent);padding-top:18px}
+.passo .n{font-family:"Montserrat";font-weight:900;font-size:44px;line-height:1;color:#fff}
+.passo h3{font-family:"Montserrat";font-weight:900;font-size:18px;margin:12px 0 6px}
+.passo p{font-size:16.5px;color:var(--soft)}
+.passo a{color:var(--accent)}
+
+/* codici */
+.codici{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.cod{display:flex;align-items:center;gap:20px;padding:26px 28px;background:var(--panel);border:1px solid var(--line);border-radius:22px}
+.cod .pct{font-family:"Montserrat";font-weight:900;font-size:44px;line-height:1;min-width:112px}
+.cod .b{font-weight:600;font-size:18px}
+.cod .c{font-size:15px;color:var(--muted)}
+.cod button{margin-left:auto;background:#fff;border:0;color:var(--ink);border-radius:999px;padding:10px 16px;font-family:"Montserrat";font-weight:900;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.trasp{font-size:15px;color:var(--muted);margin-top:18px;max-width:70ch}
+
+/* fasce */
+.fascia{border-top:1px solid var(--line)}
+.tag{display:inline-block;font-family:"Montserrat";font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--rouge);padding:7px 12px;border-radius:10px}
+.tag.b{background:#2C42A8}.tag.c{background:#3A4766}
+.gruppo{font-family:"Montserrat";font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:48px 0 0}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+.card{display:grid!important;grid-template-columns:150px 1fr;gap:0 22px;align-content:start}
+.card>.img{grid-row:1/span 8;aspect-ratio:1;margin:0}
+.card>*:not(.img){grid-column:2}
+.gruppo+.cards{margin-top:18px}
+.card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:18px 18px 22px}
+.card .img{background:#fff;border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:20px}
+.card .img img{width:70%;height:84%;object-fit:contain}
+.card .brand{font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.card h3{font-family:"Montserrat";font-weight:900;font-size:21px;line-height:1.1;margin:6px 0}
+.card .claim{font-weight:600;font-size:17px;color:var(--accent);margin-bottom:12px}
+.card .t{font-size:16px;color:var(--soft)}
+.card .t p+p{margin-top:8px}
+.card .uso{margin-top:16px;font-size:15px;background:rgba(255,255,255,.05);border-radius:14px;padding:12px 14px}
+.card .uso div{display:flex;gap:10px;padding:3px 0}
+.card .uso span{font-family:"Montserrat";font-weight:900;font-size:11px;letter-spacing:.1em;text-transform:uppercase;min-width:62px;padding-top:3px;color:var(--accent)}
+.card .avviso{font-size:14px;color:var(--muted);margin-top:10px}
+.card .foot{margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.card .prezzo{font-size:15px;color:var(--muted)}
+.card .foot .btn{padding:11px 16px;font-size:11px;white-space:nowrap}
+.card .prezzo{white-space:nowrap}
+
+/* giornata */
+.giorno{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.momento{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px}
+.momento h3{font-family:"Montserrat";font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:.06em}
+.momento .q{font-size:15px;color:var(--muted);margin-bottom:10px}
+.momento ul{list-style:none}
+.momento li{font-size:16.5px;padding:7px 0;border-top:1px solid var(--line)}
+.momento li:first-child{border-top:0}
+.momento li span{display:block;color:var(--muted);font-size:14.5px}
+
+/* prima e dopo */
+.casi{overflow:hidden;margin-top:36px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.nastro{display:flex;gap:18px;width:max-content}
+.caso{flex:none;border-radius:18px;overflow:hidden}
+.caso img{height:340px;width:auto;display:block;background:#0B1430}
+.caso .t{padding:10px 2px;font-size:15px}
+@keyframes scorri{to{transform:translateX(-50%)}}
+.casi,.giostra{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.casi::-webkit-scrollbar,.giostra::-webkit-scrollbar{display:none}
+.legale{font-size:14px;color:var(--muted);margin-top:16px}
+
+/* chiusura */
+.punto{background:linear-gradient(160deg,#00225A,#0B1430);border:1px solid var(--line);border-radius:28px;padding:88px 32px;text-align:center}
+.punto h2{max-width:16ch;margin-left:auto;margin-right:auto}
+.punto p{max-width:50ch;margin:0 auto 34px;font-size:19px;color:var(--soft)}
+.punto .nota{font-size:14px;color:var(--muted);margin-top:16px}
+
+footer{padding:56px 0 72px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+footer p+p{margin-top:8px}
+footer img{height:30px;margin-bottom:18px}
+
+@media (max-width:960px){.cards{grid-template-columns:1fr}.giorno{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.card{grid-template-columns:1fr!important}.card>.img{grid-row:auto;aspect-ratio:4/3;margin-bottom:18px}.card>*:not(.img){grid-column:1}}
+@media (max-width:760px){
+  .hero{padding-top:56px}
+  .hero .logo{height:80px}
+  section{padding:56px 0}
+  .prima{grid-template-columns:1fr;padding:32px 24px;gap:18px}
+  .passi,.codici{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .cards,.giorno{grid-template-columns:1fr}
+  .giostra .p{width:120px;height:120px;border-radius:16px}
+  .cod{padding:20px}
+  .cod .pct{font-size:32px;min-width:78px}
+  .caso img{height:230px}
+  .punto{padding:56px 22px;border-radius:22px}
+  .bar .btn{padding:10px 14px;font-size:11px}
+}
+
+
+.tre{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.tre>div{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px}
+.tre .n{font-family:"Montserrat";font-weight:900;font-size:34px;color:var(--accent);line-height:1}
+.tre h3,.blocchi h3{font-family:"Montserrat";font-weight:900;font-size:20px;margin:10px 0 8px}
+.tre p,.blocchi p{color:var(--soft);font-size:16.5px}
+.blocchi{display:grid;gap:14px;margin-top:26px}
+.blocchi>div{display:grid;grid-template-columns:70px 1fr;gap:20px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;border-left:5px solid}
+.b-base{border-left-color:#4A7BD8!important}.b-comp{border-left-color:#E0B13A!important}.b-pomp{border-left-color:#C8414F!important}
+.sigla{font-family:"Montserrat";font-weight:900;font-size:44px;line-height:1;text-align:center}
+.b-base .sigla{color:#7FA6F0}.b-comp .sigla{color:#F0C860}.b-pomp .sigla{color:#F0707C}
+.fatt{margin-top:12px;display:inline-block;font-family:"Montserrat";font-weight:900;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+@media (max-width:760px){.tre{grid-template-columns:1fr}.blocchi>div{grid-template-columns:1fr;gap:6px}.sigla{text-align:left}}
+/* guida metodo */
+.due{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.due>div{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px}
+.due .n,.fasi .n,.passi3 .n{font-family:"Montserrat";font-weight:900;font-size:13px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.due h3,.fasi h3,.incluso h3,.passi3 h3{font-family:"Montserrat";font-weight:900;font-size:21px;margin:8px 0 6px}
+.due p,.fasi p,.incluso p,.passi3 p{color:var(--soft);font-size:16.5px}
+.dieci{margin-top:32px;border-top:1px solid var(--line)}
+.dieci details{border-bottom:1px solid var(--line)}
+.dieci summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:22px;padding:22px 4px}
+.dieci summary::-webkit-details-marker{display:none}
+.dieci summary::after{content:"+";margin-left:auto;font-family:"Montserrat";font-weight:900;font-size:26px;color:var(--accent);transition:transform .2s}
+.dieci details[open] summary::after{transform:rotate(45deg)}
+.dieci .num{font-family:"Montserrat";font-weight:900;font-size:30px;color:var(--accent);min-width:48px}
+.dieci .t{font-family:"Montserrat";font-weight:900;font-size:20px;line-height:1.2}
+.dieci .t small{display:block;font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:16px;color:var(--muted);margin-top:4px;letter-spacing:0}
+.dieci .c{padding:0 4px 26px 74px;color:var(--soft);font-size:17.5px;max-width:78ch}
+.dieci .c p+p,.dieci .c p+ul,.dieci .c ul+p{margin-top:10px}
+.faq .c{padding-left:4px}
+.lista{margin:10px 0 0 20px;color:var(--soft)}
+.lista li{margin:6px 0}
+.esempio{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.esempio>div{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;gap:16px;align-items:baseline}
+.esempio span{font-family:"Montserrat";font-weight:900;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);min-width:98px}
+.esempio p{font-size:16.5px;color:var(--soft)}
+.fasi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.fasi>div{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;border-top:3px solid var(--accent)}
+.fasi .d{margin-top:10px;font-size:16px}
+.incluso{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.incluso .largo{grid-column:1/-1}
+.incluso>div{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px}
+.scheda{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px;max-width:680px}
+.scheda figure{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.scheda img{width:100%;display:block}
+.scheda figcaption{padding:14px 18px;font-size:15px;color:var(--soft)}
+.passi3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:10px auto 36px;max-width:900px;text-align:left}
+.passi3>div{background:rgba(255,255,255,.06);border-radius:18px;padding:20px}
+@media (max-width:960px){.fasi{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.due,.esempio,.incluso,.scheda,.passi3{grid-template-columns:1fr}.dieci .c{padding-left:4px}}
+@media (max-width:560px){.fasi{grid-template-columns:1fr}.dieci .num{font-size:24px;min-width:38px}.dieci .t{font-size:17px}.esempio>div{flex-direction:column;gap:6px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <img class="logo" src="img/logo_b.png" alt="SUPER-ALE">
+  <div class="hgrid">
+    <div class="htext">
+      <div class="kick">SUPER-ALE · Il Metodo</div>
+      <h1 class="h">come allenarsi <span class="hl">davvero</span></h1>
+      <p class="lead">Il sistema con cui costruiamo il percorso di ogni cliente SUPER-ALE: progressione, ripetizioni in riserva, blocchi di allenamento, scarico e alimentazione. Spiegato semplice.</p>
+      <p class="lead" style="margin-top:14px">Leggila tutta: capirai perché tanti si allenano per anni senza cambiare, e cosa fare di diverso. Se hai qualsiasi domanda, <a href="https://ig.me/m/alessandro.passalacqua_" target="_blank" rel="noopener" style="color:#fff">scrivimi su Instagram</a>.</p>
+      <div class="cta">
+        <a class="btn" href="#due">Inizia a leggere</a>
+        <a class="link" href="#percorso">Il percorso completo</a>
+      </div>
+      <div class="firma"><img src="img/ale_avatar.jpg" alt="Alessandro Passalacqua"><div><b>Creata da Alessandro Passalacqua</b>Founder di SUPER-ALE</div></div>
+    </div>
+    <div class="hfoto"><img src="img/ale.jpg" alt="Alessandro Passalacqua durante un allenamento"></div>
+  </div>
+</div></header>
+
+<section id="due"><div class="wrap">
+  <div class="prima">
+    <div><div class="kick">Perché conta</div><h2 class="h">due concetti, il resto è dettaglio</h2></div>
+    <p>La maggior parte delle persone in palestra gira a vuoto per due motivi: si allena in un modo che non porta al risultato che vuole, e fa sempre la stessa cosa. <b>Sistema queste due e il resto della guida va a posto da solo.</b></p>
+  </div>
+  <div class="due">
+    <div><div class="n">01</div><h3>Specificità</h3><p>Ti alleni nel modo che produce il risultato che vuoi.</p></div>
+    <div><div class="n">02</div><h3>Progressione</h3><p>Lo stimolo che dai al corpo cresce nel tempo.</p></div>
+  </div>
+</div></section>
+
+<section id="fattori" style="padding-top:0"><div class="wrap">
+  <div class="kick">Cosa fa crescere un muscolo</div>
+  <h2 class="h">i tre fattori dell'ipertrofia</h2>
+  <div class="tre">
+    <div><div class="n">01</div><h3>Tensione meccanica</h3><p><b>È il fattore più importante.</b> È la tensione che il muscolo subisce quando lavora sotto carico, e dipende da due cose: quanto è pesante il carico e quanto ti avvicini al cedimento.</p></div>
+    <div><div class="n">02</div><h3>Stress metabolico</h3><p>È l'accumulo di metaboliti, come il lattato, dentro il muscolo durante la serie. Dipende dalla forza che generi e da quanto dura la serie: serve un tempo sotto tensione di almeno 15 secondi, quindi carichi non troppo pesanti e serie vicine al cedimento. Quanto pesi da solo sulla crescita è ancora discusso: per questo lo usiamo insieme agli altri due, mai al posto loro.</p></div>
+    <div><div class="n">03</div><h3>Danno muscolare</h3><p>È il micro-danno alle fibre causato soprattutto dalla fase eccentrica, quando il peso scende. Attiva le cellule satelliti, che riparano la fibra. Quanto conti davvero per la crescita non si sa ancora: un danno eccessivo ti toglie forza e allunga il recupero, e più indolenzimento non vuol dire più crescita.</p></div>
+  </div>
+
+  <h2 class="h" style="margin-top:64px">come li mettiamo in ogni seduta</h2>
+  <p class="sub">Ogni seduta va dal più pesante al più leggero, e ogni blocco ha un compito preciso.</p>
+  <div class="blocchi">
+    <div class="b-base"><div class="sigla">B</div><div><h3>Esercizi base</h3><p>Panca, squat, stacco, trazioni: i multiarticolari pesanti. Insegnano al sistema nervoso a reclutare più fibre, sincronizzarle e coordinarle. <b>Il corpo prima impara a usare il muscolo che ha, e solo dopo ne costruisce di nuovo</b>: i base sono il motore di questo processo. Carichi alti, poche ripetizioni, recuperi lunghi, niente cedimento.</p><div class="fatt">Tensione meccanica</div></div></div>
+    <div class="b-comp"><div class="sigla">C</div><div><h3>Esercizi complementari</h3><p>Lat machine, panca con manubri, pressa, curl. Il loro compito è accumulare volume sugli stessi muscoli: l'ipertrofia risponde a quanto è pesante lo stimolo, e anche a quante volte lo ripeti. Lavorano il muscolo da angolazioni diverse per coprire i punti deboli, e ti fanno arrivare al cedimento nell'ultima serie. <b>Sono il punto d'incontro dei tre fattori</b>: carichi medi vicino al cedimento tengono alta la tensione.</p><div class="fatt">Tensione meccanica · Stress metabolico · Danno muscolare</div></div></div>
+    <div class="b-pomp"><div class="sigla">P</div><div><h3>Pompaggio</h3><p>La parte finale: isolamento, ripetizioni alte, cedimento in ogni serie. Chiude il lavoro metabolico e ti lascia quella sensazione che ti fa tornare in palestra.</p><div class="fatt">Stress metabolico</div></div></div>
+  </div>
+  <div class="prima" style="margin-top:28px;display:block">
+    <p><b>Nessuno dei tre basta da solo.</b> Forza senza volume non fa crescere, volume senza forza non ha abbastanza tensione, e senza la parte finale manca il lavoro metabolico e quella sensazione che ti fa tornare volentieri.</p>
+  </div>
+  <div class="kick" style="margin-top:56px">Perché servono progressioni strutturate</div>
+  <h2 class="h">lo stimolo deve crescere</h2>
+  <p class="sub">Tutto questo funziona a una sola condizione: che lo stimolo cresca nel tempo, perché il corpo costruisce muscolo come adattamento a stimoli sempre maggiori. <b>Se fai sempre lo stesso peso per le stesse ripetizioni, il corpo si adatta e smette di crescere.</b> Per questo in ogni scheda la progressione è scritta settimana per settimana.</p>
+</div></section>
+
+<section id="guida" style="padding-top:0"><div class="wrap">
+  <div class="kick">La guida</div>
+  <h2 class="h">le 10 cose che impara ogni cliente <span style="text-transform:none">SUPER-ALE</span></h2>
+  <p class="sub">I principi su cui è costruito il Metodo <span style="text-transform:none">SUPER-ALE</span>, nell'ordine in cui li impari. Tocca ognuno per aprirlo.</p>
+  <div class="dieci" id="dieci"></div>
+</div></section>
+
+<section id="esempio" style="padding-top:0"><div class="wrap">
+  <div class="kick">Un esempio reale</div>
+  <h2 class="h">tutte e 10 in una sola seduta</h2>
+  <p class="sub">La teoria serve quando la vedi funzionare. Ecco un martedì qualsiasi del primo blocco, con lo squat come esercizio principale.</p>
+  <div class="esempio">
+    <div><span>Specificità</span><p>L'obiettivo è la ricomposizione, quindi la seduta è costruita per diventare più forte e mettere muscolo.</p></div>
+    <div><span>Fase</span><p>Fase 1, accumulo di volume: sei a metà del blocco.</p></div>
+    <div><span>Progressione</span><p>Rispetto alla settimana scorsa aggiungi lavoro con lo stesso carico: sale il volume, un passo alla volta.</p></div>
+    <div><span>Ordine</span><p>Squat per primo, da fresco. Poi rematore e affondi, alla fine il curl per i femorali.</p></div>
+    <div><span>Riserva</span><p>Squat con 1-2 ripetizioni in riserva in ogni serie. Il curl femorale invece si porta a cedimento.</p></div>
+    <div><span>Recupero</span><p>Recuperi lunghi sugli esercizi pesanti, più brevi sui complementari, misurati con il cronometro.</p></div>
+    <div><span>Registro</span><p>Scrivi subito carico, serie e ripetizioni: la prossima volta sai da dove ripartire.</p></div>
+    <div><span>Frequenza</span><p>Le gambe tornano anche nella seduta di giovedì, con un altro esercizio principale.</p></div>
+    <div><span>Blocco</span><p>A fine blocco parte la fase 2, dove i carichi salgono e le ripetizioni scendono.</p></div>
+    <div><span>Scarico</span><p>Tra un blocco e l'altro, una settimana più leggera per smaltire la fatica e ripartire più forte.</p></div>
+  </div>
+  <p class="sub" style="margin-top:22px">Dieci idee, una seduta semplice. <b>È il lavoro che fa un coach per te</b>: prende ognuna di queste decisioni, seduta dopo seduta, così tu non devi indovinare niente.</p>
+</div></section>
+
+<section id="ricomposizione" style="padding-top:0"><div class="wrap">
+  <div class="prima">
+    <div><div class="kick">Ricomposizione</div><h2 class="h">perdere grasso e mettere muscolo, insieme</h2></div>
+    <div>
+      <p>Si può, soprattutto se sei all'inizio, se torni dopo una pausa o se hai del grasso da perdere. Servono tre cose, tutte insieme:</p>
+      <ul class="lista">
+        <li><b>Allenamento con i pesi</b> che dia al corpo un motivo per costruire e tenere il muscolo.</li>
+        <li><b>Abbastanza proteine</b>, almeno 1,6 grammi per chilo di peso corporeo, qualcosa in più quando sei in deficit.</li>
+        <li><b>Un deficit calorico piccolo</b>, così perdi grasso senza togliere al muscolo quello che gli serve.</li>
+      </ul>
+      <p style="margin-top:14px">In ricomposizione la bilancia si muove poco anche quando cambi tanto: lo specchio inganna perché ti ci guardi tutti i giorni, il metro no. Per questo guardiamo misure, foto e carichi che salgono.</p>
+      <p style="margin-top:14px"><b>E ti diciamo la verità sui tempi:</b> il muscolo si costruisce in mesi e anni, non in settimane. Chi ti promette di più ti sta vendendo qualcosa.</p>
+    </div>
+  </div>
+</div></section>
+
+
+
+<section id="percorso" style="padding-top:0"><div class="wrap">
+  <div class="kick">Il percorso</div>
+  <h2 class="h">circa cinque mesi, quattro fasi</h2>
+  <p class="sub">Ogni fase ha un obiettivo preciso e prepara quella dopo, e la ricevi una alla volta, scritta su come è andata la precedente. Se parti da zero, prima c'è una fase preparatoria per imparare i movimenti. Il tuo livello dipende da quanto lavoro con un metodo hai alle spalle e da come ti muovi sotto il bilanciere, più che dagli anni di palestra.</p>
+  <div class="fasi">
+    <div><div class="n">Fase 1</div><h3>Accumulo di volume</h3><p>5 settimane + scarico · 3 sedute</p><p class="d">Impari i movimenti e accumuli lavoro con carichi moderati. Le serie salgono settimana dopo settimana.</p></div>
+    <div><div class="n">Fase 2</div><h3>Aumento dell'intensità</h3><p>5 settimane · 3 sedute</p><p class="d">I carichi salgono e le ripetizioni scendono: trasformi il lavoro fatto in forza.</p></div>
+    <div><div class="n">Fase 3</div><h3>Secondo blocco di volume</h3><p>6 settimane · 3-4 sedute</p><p class="d">Più sedute e più lavoro per ogni muscolo, partendo da carichi più alti di prima.</p></div>
+    <div><div class="n">Fase 4</div><h3>Secondo blocco di intensità</h3><p>6 settimane · 3-4 sedute</p><p class="d">I carichi salgono di nuovo, partendo più in alto. Alla fine confronto di foto, misure e carichi, e si riparte da un livello più alto.</p></div>
+  </div>
+</div></section>
+
+<section id="incluso" style="padding-top:0"><div class="wrap">
+  <div class="kick">Il Metodo SUPER-ALE 1:1</div>
+  <h2 class="h">un percorso a 360 gradi</h2>
+  <p class="sub">Allenamento, alimentazione e corsa costruiti insieme, sulla tua vita vera.</p>
+  <div class="incluso">
+    <div><h3>Scheda palestra su 5 mesi</h3><p>Quattro fasi costruite sul tuo livello reale, sui giorni che hai e sui tuoi obiettivi. Con valutazione della tecnica e bilancio di fine fase con foto, misure e carichi.</p></div>
+    <div><h3>Biologo nutrizionista iscritto all'albo</h3><p>La ricomposizione si gioca per metà in palestra e per metà a tavola. Il nutrizionista costruisce il tuo piano e si coordina con me: alimentazione e allenamento devono parlarsi.</p></div>
+    <div><h3>Corsa integrata</h3><p>Se corri o vuoi iniziare, corsa e palestra si programmano insieme: la fatica è una sola e il corpo la somma tutta.</p></div>
+    <div><h3>Assistenza e app</h3><p>Registri le sedute sull'app, mi scrivi quando hai un dubbio e, se serve, ti mando video specifici sugli esercizi.</p></div>
+    <div class="largo"><h3>La community SUPER-ALE</h3><p>Dentro trovi tutto quello che ti serve tra una seduta e l'altra:</p><ul class="lista"><li>video workout full body e addominali</li><li>mobilità prima e dopo la corsa, video di stretching</li><li>video di esecuzione degli esercizi in palestra</li><li>un ricettario con 100 ricette</li></ul></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="prima">
+    <div><div class="kick">La verità</div><h2 class="h">una guida è solo metà del lavoro</h2></div>
+    <p>Adesso conosci il sistema con cui programmiamo ogni cliente SUPER-ALE. Una guida però non può costruirti il programma, capire quanto recuperi o cambiare il piano quando la vita si mette in mezzo. <b>È la parte che fa davvero la differenza, ed è quella che quasi nessuno riesce a fare da solo.</b></p>
+  </div>
+</div></section>
+
+<section id="casi-sez" hidden style="padding-top:0"><div class="wrap">
+  <div class="kick">I risultati</div>
+  <h2 class="h">cosa succede quando segui un metodo</h2>
+  <div class="casi"><div class="nastro" id="nastro"></div></div>
+  <p class="legale">Risultati individuali, ottenuti con allenamento, alimentazione e costanza. Non sono garantiti e dipendono dal punto di partenza di ognuno.</p>
+</div></section>
+
+<section id="recensioni" style="padding-top:0"><div class="wrap">
+  <div class="kick">Cosa dicono</div>
+  <h2 class="h">le parole dei miei ragazzi</h2>
+  <div class="recensioni">
+    <div class="rec"><div class="stelle">★★★★★</div><p>Il nutrizionista mi ha creato una dieta che non avevo mai provato e mi ha stupito piacevolmente. Ho imparato che il numero della bilancia non è sempre veritiero, e sono contenta dei risultati che sto avendo. Non lo dico per circostanza: <b>sono migliorata molto di più in questi 1-2 mesi di percorso con voi che negli ultimi anni!</b> Non vedo l'ora di proseguire.</p><div class="chi"><b>Cliente</b> · coaching 1:1 con nutrizione</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Trovare Ale e affidarmi a lui è stata una delle decisioni migliori che io abbia mai preso. Due mesi fa pesavo 88 kg e non riuscivo a correre per più di 5 minuti, ora peso 84,5 e corro 40 minuti senza problemi. Ma il risultato più grande è stato il ritorno dell'amore per lo sport.</p><div class="chi"><b>Cliente</b> · coaching corsa</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Per la prima volta ho corso 11 km, con un caldo torrido e tanti dislivelli. Volevo mollare già al quarto chilometro: grazie ad Ale e al percorso che mi sta portando alla mia prima mezza, l'ho finito senza camminare nemmeno 10 metri.</p><div class="chi"><b>Simone F.</b> · verso la prima mezza maratona</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Ho appena finito la palestra, mi è piaciuta tantissimo: non troppi esercizi e quelli giusti.</p><div class="chi"><b>Cliente</b> · coaching palestra</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Ho provato la nuova scheda e posso solo dire fantastica! Tempi ed esercizi top, e soprattutto riesco a coordinarmi con il lavoro.</p><div class="chi"><b>Cliente</b> · coaching palestra</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Il tuo è un metodo davvero unico: combinare tutto insieme, con competenze trasversali tra corsa, pesi e nutrizione, è molto figo.</p><div class="chi"><b>Cliente</b> · coaching 1:1</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Abbiamo raggiunto il primo obiettivo, il più importante per me: farmi tornare la voglia di muovermi e fare sport. Pensavo che non ci sarei mai più arrivato.</p><div class="chi"><b>Cliente</b> · coaching 1:1</div></div>
+    <div class="rec"><div class="stelle">★★★★★</div><p>Ti ringrazio tanto per la tua professionalità! Stasera mi prendo del tempo per leggere con calma la scheda e riprendere con la fase 2 a pieno ritmo.</p><div class="chi"><b>Cliente</b> · coaching palestra</div></div>
+  </div>
+  <p class="legale">Messaggi reali dei miei clienti, riportati con il loro permesso.</p>
+</div></section>
+
+<section id="domande" style="padding-top:0"><div class="wrap">
+  <div class="kick">Domande</div>
+  <h2 class="h">prima di prenotare</h2>
+  <div class="dieci faq">
+    <details><summary><span class="t">La call è davvero gratuita?</span></summary><div class="c"><p>Sì. Non paghi niente e non ti impegni a niente.</p></div></details>
+    <details><summary><span class="t">Devo avere già esperienza in palestra?</span></summary><div class="c"><p>No. Se parti da zero, il percorso comincia con una fase per imparare i movimenti in sicurezza.</p></div></details>
+    <details><summary><span class="t">Cosa succede durante la call?</span></summary><div class="c"><p>Parliamo di come ti alleni oggi, di cosa vuoi ottenere e di cosa ti sta frenando. Se il percorso fa per te, ti spieghiamo come funziona.</p></div></details>
+    <details><summary><span class="t">Sono una donna: con i pesi divento grossa?</span></summary><div class="c"><p>No. Le atlete molto muscolose che hai in mente, salvo rarissimi casi, ci sono arrivate con l'aiuto di farmaci. Il gonfiore che senti dopo una seduta di gambe viene dai liquidi richiamati dall'allenamento e passa da solo. I glutei crescono come ogni altro muscolo: carichi che salgono nel tempo e un programma che parte graduale.</p></div></details>
+    <details><summary><span class="t">Posso fare il percorso anche se corro?</span></summary><div class="c"><p>Sì, ed è una delle cose che ci distingue: palestra e corsa vengono programmate insieme, così una non toglie recupero all'altra.</p></div></details>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="punto">
+    <div class="kick">Il prossimo passo</div>
+    <h2 class="h">hai il sistema, adesso costruiamo il tuo programma</h2>
+    <div class="passi3">
+      <div><div class="n">1</div><h3>Guardiamo come ti alleni oggi</h3><p>Programma, risultati e abitudini, con sincerità.</p></div>
+      <div><div class="n">2</div><h3>Troviamo cosa manca</h3><p>Le una o due cose che ti stanno frenando.</p></div>
+      <div><div class="n">3</div><h3>Esci con il prossimo passo</h3><p>Un'idea chiara di cosa fare, in ogni caso.</p></div>
+    </div>
+    <a class="btn white" href="https://formcoaching.super-ale.com/?utm_source=guida-metodo&utm_content=fondo">Voglio il mio piano</a>
+    <div class="nota">Una call gratuita con me e il team SUPER-ALE</div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="img/logo_b.png" alt="SUPER-ALE">
+  <p>Le informazioni di questa pagina sono divulgative e non sostituiscono il parere di un medico. Se hai una condizione medica o un infortunio, parlane con il tuo medico prima di iniziare un programma di allenamento.</p>
+  <p>© 2026 Alessandro Passalacqua · SUPER-ALE</p>
+</div></footer>
+
+<div class="barra-call">
+  <span>Vuoi saperne di più sul nostro metodo di allenamento?</span>
+  <a class="btn" href="https://formcoaching.super-ale.com/?utm_source=guida-metodo&utm_content=barra-bassa">Prenota la tua call gratuita</a>
+</div>
+
+<script>
+const DIECI = [
+  ["Supercompensazione","Ti alleni, ti stanchi, torni più forte",
+   `<p>Dopo un allenamento il corpo non si limita a recuperare: si prepara a gestire quello stimolo anche la volta dopo, e torna un po' più forte di prima. Si chiama supercompensazione.</p><p>Ogni seduta però produce due effetti insieme: ti rende più in forma e ti stanca. <b>Il miglioramento c'è subito, ma è nascosto dalla fatica.</b> Lo scopo di un programma fatto bene è dissipare la fatica al momento giusto, per farlo emergere. Per questo contano le pause tra una seduta e l'altra, e a fine blocco arriva una settimana di scarico.</p>`],
+  ["Le leggi dell'allenamento","Troppo poco, troppo, sempre uguale",
+   `<ul class="lista"><li>Se lo stimolo è insufficiente, non migliori.</li><li>Se è eccessivo, il corpo non riesce ad adattarsi e non migliori lo stesso, in più rischi di farti male.</li><li>Se resta sempre uguale, il miglioramento si ferma.</li><li>Per questo lo stimolo deve sempre crescere, e ogni schema prima o poi smette di funzionare.</li></ul><p>Fare sempre la stessa scheda e ammazzarsi a ogni seduta portano allo stesso risultato. <b>Il metodo giusto è quello adatto a te in quel momento.</b></p>`],
+  ["Adattamenti decrescenti","All'inizio migliori tanto, poi meno",
+   `<p>Un corpo sottoposto sempre allo stesso stimolo risponde con miglioramenti sempre più piccoli. E più diventi bravo, più ti adatti in fretta e meno guadagni da ogni ciclo.</p><p>Nei primi mesi migliori tantissimo, poi rallenti: succede a tutti, ed è il motivo per cui con il tempo servono programmi più precisi. Lo stesso schema si ripete al massimo tre volte, poi si cambia.</p>`],
+  ["Prima la forza, poi la massa","Il sistema nervoso arriva prima del muscolo",
+   `<p>Un principiante riesce ad attivare solo una parte del muscolo che ha. Le prime settimane servono a insegnare al sistema nervoso a reclutare più fibre, a farle lavorare insieme e a coordinare i muscoli tra loro: per questo bastano poche sedute per diventare più forte.</p><p><b>Prima arriva l'aumento di forza, poi quello di massa.</b> Se nei primi mesi diventi più forte senza vederti più grosso, il metodo sta funzionando.</p>`],
+  ["La tecnica","La prima di tutte le progressioni",
+   `<p>Con un programma mediocre e un'ottima tecnica qualche miglioramento arriva comunque. Con il miglior programma del mondo e una tecnica sbagliata sotto carico, quel programma quasi sicuramente fallisce.</p><p>Per questo la tecnica viene prima di tutto: prima impari il movimento in modo grezzo, poi lo rifinisci, poi diventa stabile. <b>Il carico arriva dopo, quando il movimento regge.</b></p>`],
+  ["Un processo da registrare","Senza quaderno si improvvisa",
+   `<p>L'allenamento è un processo di organizzazione del lavoro, e l'allenamento "a istinto" è un mito. La memoria sbaglia molto più di quanto pensi: senza registrare è impossibile non commettere errori.</p><p>Per questo ogni seduta si scrive: carico, serie, ripetizioni, come ti sei sentito. <b>Gli esercizi base sono il termometro dei tuoi progressi.</b></p>`],
+  ["Periodizzazione a blocchi","Prima il volume, poi l'intensità",
+   `<p>Conta il gruppo di allenamenti, più della singola seduta. Ogni blocco parte da una fase di volume, dove ripeti tantissime volte gli stessi esercizi senza esagerare con il carico, e prosegue con una fase di intensità, dove i carichi salgono. Poi si testa e si riparte più in alto.</p><p>Ogni blocco dura qualche settimana: c'è un piano con una data, e i cicli sono abbastanza brevi da non annoiarti mai.</p>`],
+  ["Le progressioni","Non solo più chili",
+   `<p>Progressione vuol dire qualsiasi cosa, messa in sequenza, che aumenta lo stimolo: più carico, più ripetizioni o serie, recuperi più brevi, più sedute. Anche migliorare la tecnica è una progressione.</p><p>Aggiungere peso a ogni seduta funziona per un po', poi diventa troppo pesante. Per questo usiamo progressioni diverse in fasi diverse, e partiamo sempre da carichi un po' sotto quelli che pensi di reggere: <b>meglio sottostimare che sovrastimare.</b></p>`],
+  ["Buffer e cedimento","Sapere quante ripetizioni ti restano",
+   `<p>Senza sapere dove si trova davvero il tuo cedimento, anche il programma migliore dà risultati a metà. La maggior parte delle persone si ferma prima, al cedimento "psicologico": in realtà ne avrebbe ancora diverse.</p><p>Il buffer è il margine che lasci: buffer 2 significa che avresti potuto farne altre due. Con il buffer la fatica si accumula sul totale delle serie, e così <b>fai più lavoro buono senza distruggerti a ogni serie</b>.</p>`],
+  ["Multifrequenza","Tre sedute fatte bene bastano",
+   `<p>Allenare ogni muscolo più volte a settimana è la scelta migliore per quasi tutti, e soprattutto per chi inizia. Il numero ideale di sedute è tre: <b>con tre allenamenti a settimana sempre svolti si ottengono risultati eccezionali.</b></p><p>Ogni seduta dura dai 45 ai 90 minuti, con al massimo due esercizi base. Per crescere basta esserci, settimana dopo settimana.</p>`],
+];
+document.getElementById("dieci").innerHTML = DIECI.map((d,i)=>`<details><summary><span class="num">${String(i+1).padStart(2,"0")}</span><span class="t">${d[0]}<small>${d[1]}</small></span></summary><div class="c">${d[2]}</div></details>`).join("");
+
+const CASI = [
+  {foto:"casi/dubai.jpg", w:900, h:593}, {foto:"casi/spogliatoio.jpg", w:900, h:679}, {foto:"casi/tatuaggi.jpg", w:900, h:494},
+  {foto:"casi/biondo2.jpg", w:900, h:581}, {foto:"casi/spiaggia.jpg", w:900, h:689},
+];
+const html = CASI.map(c=>`<div class="caso"><img src="img/${c.foto}" width="${c.w}" height="${c.h}" decoding="async" alt="Prima e dopo"></div>`).join("");
+document.getElementById("nastro").innerHTML = html + html;
+document.getElementById("casi-sez").hidden = false;
+
+function nastro(box, velocita){
+  let x = 0, fermo = false, t;
+  const pausa = ms => { fermo = true; clearTimeout(t); t = setTimeout(()=>{ fermo = false; x = box.scrollLeft; }, ms); };
+  box.addEventListener("touchstart", ()=>pausa(99999), {passive:true});
+  box.addEventListener("touchend", ()=>pausa(2500), {passive:true});
+  box.addEventListener("mouseenter", ()=>pausa(99999));
+  box.addEventListener("mouseleave", ()=>pausa(300));
+  box.addEventListener("wheel", ()=>pausa(2500), {passive:true});
+  let prima = performance.now();
+  (function passo(ora){
+    const dt = Math.min(64, ora - prima); prima = ora;
+    const meta = box.scrollWidth / 2;
+    if (!fermo && meta > box.clientWidth){
+      x += velocita * dt / 16.7;
+      if (x >= meta) x -= meta;
+      box.scrollLeft = x;
+    } else if (box.scrollLeft >= meta) { box.scrollLeft -= meta; x = box.scrollLeft; }
+    requestAnimationFrame(passo);
+  })(prima);
+}
+
+nastro(document.querySelector(".casi"), 0.8);
+</script>
+</body>
+</html>
